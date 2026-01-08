@@ -429,10 +429,10 @@ body.nav-active { overflow: hidden; }
 
 @keyframes words {
   0%, 33%{
-      content: "Developer";
+      content: "Frontend Developer";
   }
   34%, 66%{
-      content: "Software Tester";
+      content: "ีux/ui";
   }
 
 }
@@ -999,3 +999,4 @@ textarea.input-field {
 
 
  
+
