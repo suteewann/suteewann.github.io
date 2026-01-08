@@ -395,10 +395,10 @@
   }
   .Project {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive, แต่ไม่เกิน 250px ต่อคอลัมน์ */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ปรับเป็นสองคอลัมน์ถ้ามีสองรูป */
     gap: 20px;
-    padding: 20px;
-    justify-content: center; 
+    padding: 20px 0;
+    justify-items: center;
 }
 
 .project_group {
@@ -418,14 +418,15 @@
 }
 
 .project_images img {
-    display: block;
-    width: 200px;     /* กำหนดขนาดคงที่ */
-    height: 150px;    /* กำหนดขนาดคงที่ */
-    object-fit: cover; /* ครอบภาพให้เต็มขนาดโดยไม่บิดสัดส่วน */
-    margin: 0 auto;    /* จัดให้อยู่กลาง */
+    width: 300px;  
+    height: 200px;  
+    object-fit: cover;
     border-radius: 10px;
 }
-
+/* ถ้าแถวไหนมีรูปเดียว ให้จัดให้อยู่ตรงกลาง */
+.Project:has(.project_item:nth-child(odd):only-child) {
+    justify-content: center;
+    
 /* Responsive สำหรับมือถือ */
 @media (max-width: 768px) {
     .project_images {
