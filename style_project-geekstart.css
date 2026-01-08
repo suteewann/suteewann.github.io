@@ -395,9 +395,10 @@
   }
   .Project {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive, แต่ไม่เกิน 250px ต่อคอลัมน์ */
     gap: 20px;
     padding: 20px;
+    justify-content: center; 
 }
 
 .project_group {
@@ -418,9 +419,10 @@
 
 .project_images img {
     display: block;
-    width: 200px;  
-    height: auto;
-    margin: 0 auto; /* จัดรูปกึ่งกลาง */
+    width: 200px;     /* กำหนดขนาดคงที่ */
+    height: 150px;    /* กำหนดขนาดคงที่ */
+    object-fit: cover; /* ครอบภาพให้เต็มขนาดโดยไม่บิดสัดส่วน */
+    margin: 0 auto;    /* จัดให้อยู่กลาง */
     border-radius: 10px;
 }
 
