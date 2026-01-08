@@ -401,40 +401,27 @@
     justify-items: center; /* จัดให้อยู่ตรงกลาง */
 }
 
-.project_card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    width: 100%;
-    max-width: 300px; /* จำกัดขนาดของการ์ด */
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-    text-decoration: none;
-    color: inherit;
+.project_item {
+  text-align: center;
 }
 
-.project_card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.project_item img {
+  width: 100%;  /* รูปเต็ม column */
+  height: auto; /* สัดส่วนคงที่ */
+  border-radius: 10px; /* ถ้าอยากโค้งมุม */
+  display: block;
+  margin-bottom: 10px;
 }
 
-.project_card img {
-    width: 100%;
-    height: 180px; /* ปรับเป็นสี่เหลี่ยมผืนผ้า */
-    object-fit: cover;
-    border-radius: 10px;
+.project_item p {
+  font-family: var(--ff-manrope);
+  font-size: 1.6rem;
+  color: var(--black-coral);
 }
 
-
-
-/* Responsive: ปรับเป็น 1 คอลัมน์เมื่อจอมือถือ */
-@media (max-width: 600px) {
-    .Project {
-        grid-template-columns: repeat(1, 1fr);
-    }
+/* Responsive: 1 column บนมือถือ */
+@media (max-width: 768px) {
+  .Project {
+    grid-template-columns: 1fr;
+  }
 }
