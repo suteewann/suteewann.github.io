@@ -1,0 +1,90 @@
+:root {
+    --white: hsla(0, 0%, 100%, 1);
+    --black-coral: hsla(220, 12%, 43%, 1);
+    --ff-manrope: 'Manrope', sans-serif;
+    --radius-8: 8px;
+    --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
+    --shadow-2: 0 4px 28px hsla(216, 14%, 14%, 0.07);
+    --transition-1: 0.25s ease;
+}
+
+/* Layout container */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Card */
+.project-card {
+    flex: 1 1 45%; /* 2 ต่อแถวเต็มเวลา */
+    max-width: 500px;
+    background: var(--white);
+    border-radius: var(--radius-8);
+    box-shadow: var(--shadow-2);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--black-coral);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+}
+
+/* รูป + overlay text */
+.project-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: var(--radius-8);
+    font-family: var(--ff-manrope);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Content */
+.project-content {
+    padding: 15px;
+}
+
+.project-content h2 {
+    font-family: var(--ff-manrope);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.project-content p {
+    font-family: var(--ff-manrope);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--black-coral);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%; /* 1 ต่อแถวบนมือถือ */
+    }
+}
