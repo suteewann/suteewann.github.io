@@ -401,27 +401,32 @@
     justify-items: center; /* จัดให้อยู่ตรงกลาง */
 }
 
-.project_item {
-  text-align: center;
+.project_group {
+    margin-bottom: 60px;
 }
 
-.project_item img {
-  width: 100%;  /* รูปเต็ม column */
-  height: auto; /* สัดส่วนคงที่ */
-  border-radius: 10px; /* ถ้าอยากโค้งมุม */
-  display: block;
-  margin-bottom: 10px;
+.project_title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-.project_item p {
-  font-family: var(--ff-manrope);
-  font-size: 1.6rem;
-  color: var(--black-coral);
+.project_images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* Responsive: 1 column บนมือถือ */
+.project_images img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Responsive สำหรับมือถือ */
 @media (max-width: 768px) {
-  .Project {
-    grid-template-columns: 1fr;
-  }
+    .project_images {
+        grid-template-columns: 1fr;
+    }
 }
