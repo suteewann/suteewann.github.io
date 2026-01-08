@@ -1,90 +1,440 @@
 :root {
+
+    /**
+     * colors
+     */
+  
     --white: hsla(0, 0%, 100%, 1);
+    --white_a8: hsla(0, 0%, 100%, 0.08);
+    --white_a12: hsla(0, 0%, 100%, 0.12);
+    --cultured: hsla(220, 20%, 97%, 1);
+    --snow: hsla(345, 57%, 97%, 1);
+    --manatee: hsla(219, 10%, 62%, 1);
     --black-coral: hsla(220, 12%, 43%, 1);
+    --cadet-blue-crayola_a20: hsla(222, 23%, 71%, 0.2);
+    --cinnamon-satin: hsla(344, 53%, 62%, 1);
+    --raisin-black: hsla(216, 14%, 14%, 1);
+    --raisin-black_a6: hsla(216, 14%, 14%, 0.06);
+    --gunmetal: hsla(214, 15%, 21%, 1);
+    --charcoal: hsla(219, 22%, 26%, 1);
+  
+    /**
+     * typography
+     */
+  
     --ff-manrope: 'Manrope', sans-serif;
-    --radius-8: 8px;
+  
+    --fs-1: calc(2.7rem + 1.38vw);
+    --fs-2: calc(2.6rem + .66vw);
+    --fs-3: calc(2.6rem + .24vw);
+    --fs-4: 1.9rem;
+    --fs-5: 1.8rem;
+    --fs-6: 1.7rem;
+    --fs-7: 1.5rem;
+    --fs-8: 1.4rem;
+    
+    --fw-700: 700;
+  
+    /**
+     * spacing
+     */
+  
+    --section-padding: 90px;
+  
+    /**
+     * box shadow
+     */
+  
     --shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
     --shadow-2: 0 4px 28px hsla(216, 14%, 14%, 0.07);
+  
+    /**
+     * border radius
+     */
+  
+    --radius-circle: 50%;
+    --radius-pill: 100px;
+    --radius-8: 8px;
+    --radius-6: 6px;
+  
+    /**
+     * transition
+     */
+  
     --transition-1: 0.25s ease;
-}
-
-/* Layout container */
-.portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Card */
-.project-card {
-    flex: 1 1 45%; /* 2 ต่อแถวเต็มเวลา */
-    max-width: 500px;
-    background: var(--white);
-    border-radius: var(--radius-8);
-    box-shadow: var(--shadow-2);
-    overflow: hidden;
+    --transition-2: 0.5s ease;
+    --transition-3: 0.3s ease-in-out;
+  
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #RESET
+  \*-----------------------------------*/
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li { list-style: none; }
+  
+  a,
+  img,
+  span,
+  button,
+  ion-icon { display: block; }
+  
+  a {
+    color: inherit;
     text-decoration: none;
+  }
+  
+  img { height: auto; }
+  
+  input,
+  button,
+  textarea {
+    background: none;
+    border: none;
+    font: inherit;
+  }
+  
+  input,
+  textarea { width: 100%; }
+  
+  button { cursor: pointer; }
+  
+  ion-icon { pointer-events: none; }
+  
+  html {
+    font-family: var(--ff-manrope);
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: rgb(243, 238, 234);
     color: var(--black-coral);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-2);
-}
-
-/* รูป + overlay text */
-.project-image {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    display: block;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(0,0,0,0.6);
-    color: var(--white);
-    padding: 5px 10px;
-    border-radius: var(--radius-8);
-    font-family: var(--ff-manrope);
-    font-weight: 700;
-    font-size: 1.4rem;
-}
-
-/* Content */
-.project-content {
-    padding: 15px;
-}
-
-.project-content h2 {
-    font-family: var(--ff-manrope);
-    font-weight: 700;
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-}
-
-.project-content p {
-    font-family: var(--ff-manrope);
     font-size: 1.6rem;
-    line-height: 1.5;
-    color: var(--black-coral);
+    line-height: 1.7;
+  }
+  
+  body.nav-active { overflow: hidden; }
+  
+  ::-webkit-scrollbar { width: 10px; }
+  
+  ::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+  
+  ::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+  
+  ::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #REUSED STYLE
+  \*-----------------------------------*/
+  
+  .container { padding-inline: 16px; }
+  
+  .social-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .social-link {
+    font-size: 2rem;
+    transition: var(--transition-1);
+  }
+  
+  .social-link:is(:hover, :focus-visible) { transform: translateY(-3px); }
+  
+  .section { padding-block: var(--section-padding);
+   }
+  
+  .w-100 { width: 100%; }
+  
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+  
+  .h1 { font-size: var(--fs-1); }
+  
+  .h2 { font-size: var(--fs-2); }
+  
+  .h3 { font-size: var(--fs-3); }
+  
+  .h4 { font-size: var(--fs-4); }
+  
+  .btn {
+    background-color: transparent;
+      padding: 5px 20px;
+      border-radius: 20px;
+      border: 2px solid rgb(109,67, 0);
+      transition: 0.2s linear;
+  }
+  
+  .btn:hover{
+    background-color: rgb(109,67, 0);
+      color: white;
+  }
+  
+  
+  .section-text { font-size: var(--fs-5); }
+  
+  .section-title { margin-block-end: 16px; }
+  
+  .grid-list {
+    display: grid;
+    gap: 30px;
+  }
+  
+  [data-reveal] {
+    opacity: 0;
+    transition: 0.75s ease;
+  }
+  
+  [data-reveal="top"] { transform: translateY(-30px); }
+  
+  [data-reveal="bottom"] { transform: translateY(30px); }
+  
+  [data-reveal="left"] { transform: translateX(-30px); }
+  
+  [data-reveal="right"] { transform: translateX(30px); }
+  
+  [data-reveal].revealed {
+    transform: translate(0);
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+    #HEADER
+  \*-----------------------------------*/
+  
+  .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ecd6c3;
+      padding: 20px 50px; /* เพิ่ม padding ให้ห่างขอบ */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;position: absolute;
+  }
+  
+  .header.active {
+    position: fixed;
+    background-color:#ecd6c3 ;
+    animation: slideIn 0.5s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .nav-open-btn {
+    font-size: 3.5rem;
+    color: var(--gunmetal);
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    background-color: var(--raisin-black);
+    color: var(--white);
+    max-width: 300px;
+    width: 100%;
+    height: 104vh;
+    padding: 30px;
+    padding-block-end: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 2;
+    visibility: hidden;
+    transition: var(--transition-3);
+  }
+  
+  .navbar.active {
+    visibility: visible;
+    padding-bottom: 70px;
+    transform: translateX(300px);
+  }
+  
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-close-btn {
+    background-color: var(--white_a8);
+    color: var(--white);
+    font-size: 2rem;
+    padding: 6px;
+    border-radius: var(--radius-circle);
+    transition: var(--transition-1);
+  }
+  
+  .nav-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+  
+  .nav-close-btn:is(:hover, :focus-visible) { background-color: var(hsla(344, 53%, 62%, 1)); }
+  
+  /* ปรับ Navbar ให้เป็นระเบียบและติดอยู่ด้านบน */
+  .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ecd6c3;
+      padding: 15px 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+  
+  /* ทำให้ Navbar มีระยะห่างและดูดีขึ้น */
+  .navbar-list {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+  }
+  
+  /* ปรับขนาด Font, Padding และเพิ่มมุมโค้งให้ปุ่ม */
+  .navbar-link {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: var(--charcoal);
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+  }
+  
+  /* ทำให้ปุ่มเปลี่ยนสีเมื่อ Hover */
+  .navbar-link:hover {
+      background-color: black;
+      color: var(--white);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ทำให้ Navbar Responsive สำหรับจอเล็ก */
+  @media (max-width: 768px) {
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 250px;
+          height: 100vh;
+          background-color: var(--raisin-black);
+          color: var(--white);
+          display: flex;
+          flex-direction: column;
+          padding: 30px;
+          gap: 20px;
+          transition: 0.3s ease-in-out;
+      }
+  
+      /* เปิด Navbar เมื่อต้องการ */
+      .navbar.active {
+          left: 0;
+      }
+  
+      /* ปรับขนาด Navbar Link */
+      .navbar-link {
+          font-size: 1.8rem;
+      }
+  }
+  
+  
+  
+  .contact-link { transition: var(--transition-1); }
+  
+  .contact-link:is(:hover, :focus-visible) { color: var(--cinnamon-satin); }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 104vh;
+    background-color: var(--raisin-black);
+    pointer-events: none;
+    opacity: 0;
+    transition: var(--transition-1);
+  }
+  
+  .overlay.active {
+    pointer-events: all;
+    opacity: 0.8;
+    
+  }
+  .Project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* จัดให้เป็น 4 คอลัมน์ */
+    gap: 20px; /* ระยะห่างระหว่างการ์ด */
+    padding: 20px;
+    justify-items: center; /* จัดให้อยู่ตรงกลาง */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .project-card {
-        flex: 1 1 100%; /* 1 ต่อแถวบนมือถือ */
+.project_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px; /* จำกัดขนาดของการ์ด */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project_card img {
+    width: 100%;
+    height: 180px; /* ปรับเป็นสี่เหลี่ยมผืนผ้า */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+/* Responsive: ปรับเป็น 1 คอลัมน์เมื่อจอมือถือ */
+@media (max-width: 600px) {
+    .Project {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
