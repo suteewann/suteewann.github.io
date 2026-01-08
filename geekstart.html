@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suteewan Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style_project.css">
+    </head>
+      
+    <body>
+      
+        <header class="header" data-header>
+            <div class="container">
+                <a href="#" class="logo">
+                    <h1 style="color: black;"> My Works</h1>
+                </a>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suteewan Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<style>
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-</style>
-<body>
-  <main>
-    
-      <!-- 
-        - #certificate
-      -->
-      <section class="section certificate" aria-label="certificate" id="certificate">
-        <div class="container">
-            <div class="wrapper">
-                <div data-reveal="left">
-                    <h2 class="h2 section-title">Certificates</h2>
+                <div class="container">
+                    
+                    <a href="index.html" class="back-button">Back</a>
                 </div>
+        </header>
+
+        <section id="portfolio">
+    
+            <h1 class="port_section"> My <span>work</span></h1>
+            <div class="Project">
+                <a href="geekstart.html" class="project_card">
+                    <img src="assets/images/project-12.png" alt="">
+                    <div class="content"> 
+                        <h1>Frontend Developer Intern – GeekStart Company</h1>
+                        <p>Assisted in frontend development and collaborated with backend team</p>
+                    </div>
+                </a>
+
+                <a href="https://bu-open-house-2024.onrender.com/index.html" class="project_card">
+                    <img src="assets/images/project-1.png" alt="">
+                    <div class="content"> 
+                        <h1>Bu-open-house-2024</h1>
+                        <p>Web Development</p>
+                    </div>
+                </a>
+            
+              
             </div>
-    
-            <ul class="grid-list">
-    
-                <!-- Certificate 1 -->
-                <li data-reveal="bottom">
-                    <div class="about-card">
-                        <div class="card-icon">
-                            <img src="assets/images/certificate_1.JPG" width="500" height="500" loading="lazy">
-                        </div>
-                    </div>
-                </li>
-    
-                <!-- Certificate 2 (PDF) -->
-                <li data-reveal="bottom" data-reveal-delay="0.25s">
-                    <div class="about-card">
-                        <div class="card-icon">
-                              <img src="assets/images/certificate_2.pdf" width="500" height="500" loading="lazy" alt="Certificate PDF">
-                            </a>
-                        </div>
-                    </div>
-                </li>
-    
-            </ul>
-        </div>
-      </section>
-    
-    </article>
-  </main>
-
-</body>
-
+            
+            
+        
+            </div>
+        </section>  
+           
+    </body>
 </html>
