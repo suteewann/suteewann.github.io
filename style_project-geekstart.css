@@ -395,10 +395,9 @@
   }
   .Project {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* ระยะห่างระหว่างการ์ด */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
     padding: 20px;
-    justify-items: center; /* จัดให้อยู่ตรงกลาง */
 }
 
 .project_group {
@@ -414,15 +413,14 @@
 }
 
 .project_images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    text-align: center; 
 }
 
 .project_images img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
+    display: block;
+    width: 200px;  
+    height: auto;
+    margin: 0 auto; /* จัดรูปกึ่งกลาง */
     border-radius: 10px;
 }
 
