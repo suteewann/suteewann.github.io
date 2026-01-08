@@ -395,7 +395,7 @@
   }
   .Project {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* จัดให้เป็น 4 คอลัมน์ */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px; /* ระยะห่างระหว่างการ์ด */
     padding: 20px;
     justify-items: center; /* จัดให้อยู่ตรงกลาง */
@@ -420,9 +420,10 @@
 }
 
 .project_images img {
-    width: 100%;
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
     border-radius: 10px;
-    display: block;
 }
 
 /* Responsive สำหรับมือถือ */
