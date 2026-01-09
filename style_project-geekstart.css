@@ -428,8 +428,8 @@
 
 
 .project_images img {
-    width: 300px !important;    /* บังคับให้กว้างเท่ากัน */
-    height: 200px !important;   /* บังคับให้สูงเท่ากัน */
+    width: 400px;   
+    height: 250px;   
     object-fit: cover;           /* ให้รูปเต็มกรอบ ไม่ยืด */
     display: block;              /* ลบ inline spacing */
     margin: 0 auto;              /* เว้นให้อยู่ตรงกลาง */
