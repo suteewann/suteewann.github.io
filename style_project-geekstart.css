@@ -427,8 +427,8 @@
 }
 
 .project_images img {
-    width: 400px;   
-    height: 250px;   
+    width: 600px;   
+    height: 375px;   
     object-fit: cover;           /* ให้รูปเต็มกรอบ ไม่ยืด */
     display: block;              /* ลบ inline spacing */
     margin: 0 auto;              /* เว้นให้อยู่ตรงกลาง */
