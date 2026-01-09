@@ -417,12 +417,12 @@
     justify-items: center;
 }
 .project_images:has(img:nth-child(2)) {
-    grid-template-columns: repeat(2, 400px); 
+    grid-template-columns: repeat(2, 500px); 
     justify-content: center;                
 }
 
 .project_images:not(:has(img:nth-child(2))) {
-    grid-template-columns: 400px;            
+    grid-template-columns: 500px;            
     justify-content: center;
 }
 
