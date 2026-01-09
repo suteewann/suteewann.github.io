@@ -428,10 +428,10 @@
 
 
 .project_images img {
-    width: 420px;     
-    height: 260px;
+    width: 520px;
+    height: 320px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 12px;
 }
     
 /* Responsive สำหรับมือถือ */
