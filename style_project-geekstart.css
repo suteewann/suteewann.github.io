@@ -417,18 +417,16 @@
     justify-items: center;
 }
 .project_images:has(img:nth-child(2)) {
-    grid-template-columns: repeat(2, ุ600px); /* fix 2 คอลัมน์เท่ากับ 400px */
+    grid-template-columns: repeat(2, ุ400px); /* fix 2 คอลัมน์เท่ากับ 400px */
     justify-content: center;                  /* จัดให้อยู่กลาง */
 }
 
 .project_images:not(:has(img:nth-child(2))) {
-    grid-template-columns: 600px;            /* รูปเดียวอยู่ตรงกลาง */
+    grid-template-columns: 400px;            /* รูปเดียวอยู่ตรงกลาง */
     justify-content: center;
 }
 
-.project_images img {
-    width: 600px;   
-    height: 375px;   
+.project_images img {  
     object-fit: cover;           /* ให้รูปเต็มกรอบ ไม่ยืด */
     display: block;              /* ลบ inline spacing */
     margin: 0 auto;              /* เว้นให้อยู่ตรงกลาง */
