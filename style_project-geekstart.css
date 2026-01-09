@@ -428,8 +428,8 @@
 
 
 .project_images img {
-    width: 520px;
-    height: 320px;
+    width: 600px;
+    height: 360px;
     object-fit: cover;
     border-radius: 12px;
 }
