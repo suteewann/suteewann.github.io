@@ -397,7 +397,6 @@
     display: grid;
     gap: 20px;
     padding: 20px 0;
-    justify-items: center;
 }
 
 .project_group {
@@ -415,6 +414,7 @@
 .project_images {
     display: grid;
     gap: 30px; 
+    justify-items: center;
 }
 /* ถ้ามีมากกว่า 1 รูป → 2 คอลัมน์ */
 .project_images:has(img:nth-child(2)) {
