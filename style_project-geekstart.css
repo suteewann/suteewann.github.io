@@ -416,16 +416,15 @@
     gap: 30px; 
     justify-items: center;
 }
-/* ถ้ามีมากกว่า 1 รูป → 2 คอลัมน์ */
 .project_images:has(img:nth-child(2)) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 400px); /* fix 2 คอลัมน์เท่ากับ 400px */
+    justify-content: center;                  /* จัดให้อยู่กลาง */
 }
 
-/* ถ้ามีแค่รูปเดียว → 1 คอลัมน์ (กลาง) */
 .project_images:not(:has(img:nth-child(2))) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 400px;            /* รูปเดียวอยู่ตรงกลาง */
+    justify-content: center;
 }
-
 
 .project_images img {
     width: 400px;   
@@ -434,6 +433,7 @@
     display: block;              /* ลบ inline spacing */
     margin: 0 auto;              /* เว้นให้อยู่ตรงกลาง */
     border-radius: 10px;
+    max-width: 100%; 
 }
     
 /* Responsive สำหรับมือถือ */
