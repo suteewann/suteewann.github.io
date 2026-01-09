@@ -416,14 +416,16 @@
     display: grid;
     gap: 30px; 
 }
-.project_images.two {
+/* ถ้ามีมากกว่า 1 รูป → 2 คอลัมน์ */
+.project_images:has(img:nth-child(2)) {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
 }
-.project_images.one {
+
+/* ถ้ามีแค่รูปเดียว → 1 คอลัมน์ (กลาง) */
+.project_images:not(:has(img:nth-child(2))) {
     grid-template-columns: 1fr;
-    justify-items: center;
 }
+
 
 .project_images img {
     width: 420px;     
@@ -431,9 +433,6 @@
     object-fit: cover;
     border-radius: 10px;
 }
-/* ถ้าแถวไหนมีรูปเดียว ให้จัดให้อยู่ตรงกลาง */
-.Project:has(.project_item:nth-child(odd):only-child) {
-    justify-content: center;
     
 /* Responsive สำหรับมือถือ */
 @media (max-width: 768px) {
